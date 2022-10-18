@@ -12,10 +12,11 @@ import Appbar from "../Components/Appbar";
 
 function Home() {
   return (
-    <div className="Home">
+    <div>
       <Appbar />
       {/* <Boxes /> */}
       <MiddleGrid />
+
       <Grid container justifyContent="center">
         <Divider light width="90%" />
       </Grid>
