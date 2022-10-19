@@ -163,5 +163,6 @@ export default function MiddleGrid() {
         </Grid>
       </Grid>
     </Container>
+    </div>
   );
 }
