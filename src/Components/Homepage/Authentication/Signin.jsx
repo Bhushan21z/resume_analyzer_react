@@ -32,7 +32,7 @@ class Signin extends Component {
     this.state = {
       email: '',
       password: '',
-      lastpage:'/Answered',
+      lastpage:'/',
       message: 'PROCEED'
     }
   }

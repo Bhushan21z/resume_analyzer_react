@@ -148,8 +148,8 @@ export default function MiddleGrid() {
                 tabSize: 4,
               }}
             >
-              NO RESUME ? <br></br>
-              Do not Worry we Got you Covered
+              Get Detailed Analysis <br></br>
+              of Your Resume
             </Box>
           </Item3>
         </Grid>
