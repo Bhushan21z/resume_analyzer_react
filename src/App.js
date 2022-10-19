@@ -6,6 +6,7 @@ import Signup from './Components/Homepage/Authentication/Login2'
 import Signin from './Components/Homepage/Authentication/Login'
 import Makenew from './Components/Homepage/Makenew';
 import ResumeBuilder from './Pages/ResumeBuilder';
+import Report from './Pages/Report';
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="signup" element={<Signup />} />
         <Route path="login" element={<Signin />} />
         <Route path="makenew" element={<ResumeBuilder />} />
+        <Route path="report" element={<Report />} />
       </Routes>
     </div>
   )

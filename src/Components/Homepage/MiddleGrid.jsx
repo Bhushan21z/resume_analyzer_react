@@ -56,76 +56,84 @@ const Item3 = styled(Paper)(({ theme }) => ({
 
 export default function MiddleGrid() {
   return (
-    <Container
-    // maxWidth="xl"
-    // sx={{
-    //   height: "90vh",
-    //   width: "100vw",
-    //   backgroundColor: "#00ABF3",
-    // }}
-    >
-      {/*  Middle-Grid */}
+    <div style={{ backgroundColor: "#00ABF3" }}>
+      <Container
+        // maxWidth="xl"
+        sx={
+          {
+            //   height: "90vh",
+            //   width: "100vw",
+            // backgroundColor: "#00ABF3",
+          }
+        }
+      >
+        {/*  Middle-Grid */}
 
-      <Grid container spacing={0}>
-        <Grid item xs={5.2}>
-          <Item1>
-            <Box
-              component="img"
-              sx={{
-                height: 300,
-                width: 400,
-                maxHeight: { xs: 233, md: 300 },
-                maxWidth: { xs: 350, md: 400 },
-              }}
-              alt="The house from the offer."
-              src={banner1}
-            ></Box>
-            <Box
-              sx={{
-                // backgroundColor :'purple',
-                marginTop: 17,
-                fontSize: 35,
-                tabSize: 4,
-              }}
-            >
-              NO RESUME ? <br></br>
-              Do not Worry we Got you Covered
-            </Box>
-          </Item1>
-        </Grid>
-
-        <Grid item xs={1.5}>
-          <Item2>
-            <Button
-              variant="contained"
-              sx={{
-                width: "150px",
-                marginBottom: "20px",
-                backgroundColor: "#D9D9D9",
-                color: "black",
-              }}
-            >
-              {/* <input type="file"/> */}
-              Upload
-            </Button>
-            <Link
-              to="/makenew"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <Button
-                variant="contained"
+        <Grid container spacing={0}>
+          <Grid item xs={5.2}>
+            <Item1>
+              <Box
+                component="img"
                 sx={{
-                  width: "150px",
-                  marginTop: "20px",
-                  backgroundColor: "#D9D9D9",
-                  color: "black",
+                  height: 300,
+                  width: 400,
+                  maxHeight: { xs: 233, md: 300 },
+                  maxWidth: { xs: 350, md: 400 },
+                }}
+                alt="The house from the offer."
+                src={banner1}
+              ></Box>
+              <Box
+                sx={{
+                  // backgroundColor :'purple',
+                  marginTop: 17,
+                  fontSize: 35,
+                  tabSize: 4,
                 }}
               >
-                Make New
-              </Button>
-            </Link>
-          </Item2>
-        </Grid>
+                NO RESUME ? <br></br>
+                Do not Worry we Got you Covered
+              </Box>
+            </Item1>
+          </Grid>
+
+          <Grid item xs={1.5}>
+            <Item2>
+              <Link
+                to="/report"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <Button
+                  variant="contained"
+                  sx={{
+                    width: "150px",
+                    marginBottom: "20px",
+                    backgroundColor: "#D9D9D9",
+                    color: "black",
+                  }}
+                >
+                  {/* <input type="file"/> */}
+                  Upload
+                </Button>
+              </Link>
+              <Link
+                to="/makenew"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <Button
+                  variant="contained"
+                  sx={{
+                    width: "150px",
+                    marginTop: "20px",
+                    backgroundColor: "#D9D9D9",
+                    color: "black",
+                  }}
+                >
+                  Make New
+                </Button>
+              </Link>
+            </Item2>
+          </Grid>
 
         <Grid item xs={5.2}>
           <Item3>
@@ -148,8 +156,8 @@ export default function MiddleGrid() {
                 tabSize: 4,
               }}
             >
-              Get Detailed Analysis <br></br>
-              of Your Resume
+              NO RESUME ? <br></br>
+              Do not Worry we Got you Covered
             </Box>
           </Item3>
         </Grid>
