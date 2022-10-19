@@ -1,13 +1,14 @@
 import "../../../index.css";
 import Footer from '../../Footer'
-import Signup from './Signup'
+// import Signup from './Signup'
+import {Register} from './register';
 
 
 
 function Login2() {
   return (
     <div className="Login">
-      <Signup/>
+      <Register/>
       <Footer/>
     </div>
   
