@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Divider, Grid, Typography } from "@mui/material";
+import { Avatar, Grid, Typography } from "@mui/material";
 import pic from "../../Assets/mike.jpg";
 
 const Heading = () => {

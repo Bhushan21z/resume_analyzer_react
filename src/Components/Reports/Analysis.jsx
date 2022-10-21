@@ -1,7 +1,5 @@
 import React from "react";
 import { Divider, Grid } from "@mui/material";
-import Charts from "../../Components/Reports/Charts";
-import { PureComponent } from "react";
 import { PieChart } from "recharts";
 import { Pie } from "recharts";
 

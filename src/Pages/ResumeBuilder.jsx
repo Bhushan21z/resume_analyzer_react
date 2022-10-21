@@ -1,5 +1,5 @@
 import React from "react";
-import Makenew from "../Components/Homepage/Makenew";
+import Makenew from "../Components/MakeNew/Makenew";
 import Footer from "../Components/Footer";
 import Appbar from "../Components/Appbar";
 

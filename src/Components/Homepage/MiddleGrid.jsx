@@ -9,7 +9,8 @@ import Container from "@mui/material/Container";
 import { Link } from "react-router-dom";
 import banner1 from "../../Assets/banner-img.png";
 import banner2 from "../../Assets/banner2.png";
-
+import DriveFolderUploadIcon from "@mui/icons-material/DriveFolderUpload";
+import CreateNewFolderIcon from "@mui/icons-material/CreateNewFolder";
 const Item2 = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   margin: theme.spacing(2),
@@ -22,6 +23,8 @@ const Item2 = styled(Paper)(({ theme }) => ({
   justifyContent: "center",
   alignItems: "center",
   backgroundColor: "#00ABF3",
+  // backgroundImage:
+  //   "radial-gradient( circle 484px at 49.4% 19%,  rgba(23,156,214,1) 0%, rgba(52,48,111,1) 100.2% )",
   boxShadow: "none",
 }));
 
@@ -104,16 +107,30 @@ export default function MiddleGrid() {
                 style={{ textDecoration: "none", color: "white" }}
               >
                 <Button
-                  variant="contained"
                   sx={{
-                    width: "150px",
+                    width: "190px",
+                    height: "60px",
                     marginBottom: "20px",
-                    backgroundColor: "#D9D9D9",
-                    color: "black",
+                    backgroundColor: "#EE6C4D",
+                    borderRadius: "10px",
+                    padding: "10px",
                   }}
                 >
-                  {/* <input type="file"/> */}
-                  Upload
+                  {/* <input type="file" /> */}
+                  <Typography
+                    sx={{
+                      fontSize: "20px",
+                      color: "white",
+                    }}
+                  >
+                    <DriveFolderUploadIcon
+                      sx={{
+                        fontSize: "45px",
+                        marginRight: "10px",
+                      }}
+                    />
+                    Upload
+                  </Typography>
                 </Button>
               </Link>
               <Link
@@ -121,48 +138,62 @@ export default function MiddleGrid() {
                 style={{ textDecoration: "none", color: "white" }}
               >
                 <Button
-                  variant="contained"
                   sx={{
-                    width: "150px",
-                    marginTop: "20px",
-                    backgroundColor: "#D9D9D9",
-                    color: "black",
+                    width: "190px",
+                    height: "60px",
+                    marginBottom: "20px",
+                    backgroundColor: "#EE6C4D",
+                    borderRadius: "10px",
+                    padding: "10px",
                   }}
                 >
-                  Make New
+                  <Typography
+                    sx={{
+                      fontSize: "20px",
+                      color: "white",
+                    }}
+                  >
+                    <CreateNewFolderIcon
+                      sx={{
+                        fontSize: "45px",
+                        marginRight: "10px",
+                      }}
+                    />
+                    Make New
+                  </Typography>
                 </Button>
               </Link>
             </Item2>
           </Grid>
 
-        <Grid item xs={5.2}>
-          <Item3>
-            <Box
-              component="img"
-              sx={{
-                height: 300,
-                width: 400,
-                maxHeight: { xs: 233, md: 300 },
-                maxWidth: { xs: 350, md: 400 },
-              }}
-              alt="The house from the offer."
-              src={banner2}
-            ></Box>
-            <Box
-              sx={{
-                // backgroundColor :'purple',
-                marginBottom: 17,
-                fontSize: 35,
-                tabSize: 4,
-              }}
-            >
-              NO RESUME ? <br></br>
-              Do not Worry we Got you Covered
-            </Box>
-          </Item3>
+          <Grid item xs={5.2}>
+            <Item3>
+              <Box
+                component="img"
+                sx={{
+                  height: 300,
+                  width: 400,
+                  maxHeight: { xs: 233, md: 300 },
+                  maxWidth: { xs: 350, md: 400 },
+                }}
+                alt="The house from the offer."
+                src={banner2}
+              ></Box>
+              <Box
+                sx={{
+                  // backgroundColor :'purple',
+                  marginBottom: 17,
+                  fontSize: 35,
+                  tabSize: 4,
+                }}
+              >
+                NO RESUME ? <br></br>
+                Do not Worry we Got you Covered
+              </Box>
+            </Item3>
+          </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Container>
     </div>
   );
 }
