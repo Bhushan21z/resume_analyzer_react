@@ -31,7 +31,6 @@ class Signup extends Component {
         super(props)
         this.state = {
             name: '',
-            username: '',
             email: '',
             password: '',
             confirm: '',
