@@ -7,9 +7,18 @@ export const Register = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
+  
     emailjs.sendForm('service_lzagcks', 'template_02qxrbw', form.current, 'sbN32uGf1CIlnsi0Q')
       .then((result) => {
-          console.log(result.text);
+        var formjson={
+          email: form.current.to_email.value,
+          otp: form.current.otp.value,
+          password: form.current.otp.value,
+          name: form.current.to_name.value,
+        }
+        console.log(formjson);
+        console.log(result.text);
+        
       }, (error) => {
           console.log(error.text);
       });
@@ -21,8 +30,8 @@ export const Register = () => {
       <input type="text" name="to_name" />
       <label>Email</label>
       <input type="email" name="to_email" />
-      <label>Message</label>
-      <textarea name="otp" />
+      <label>Password</label>
+      <input name="otp" />
       <input type="submit" value="Send" />
     </form>
   );
