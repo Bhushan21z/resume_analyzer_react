@@ -8,6 +8,7 @@ import Template2 from "../../Assets/Template2.jpg";
 import Template3 from "../../Assets/Template3.jpg";
 import Template4 from "../../Assets/Template4.jpg";
 import { Link } from "react-router-dom";
+import TaskIcon from "@mui/icons-material/Task";
 
 const data = [
   {
@@ -37,16 +38,21 @@ const Template = () => {
       }}
     >
       <Typography
+        variant="h4"
         sx={{
-          display: "flex",
-          justifyContent: "center",
-          fontFamily: "sans-serif",
           fontWeight: "bold",
-          // marginTop: "20px",
-          // color: "white",
-          fontSize: "3em",
+          color: "#000",
+          textAlign: "center",
+          marginBottom: "3%",
         }}
       >
+        <TaskIcon
+          sx={{
+            fontSize: "2.5rem",
+            color: "#000",
+            marginRight: "5px",
+          }}
+        />
         Templates
       </Typography>
 

@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Grid } from "@mui/material";
 import { Link } from "react-router-dom";
+
 export default function Appbar() {
   return (
     <Box>
@@ -59,6 +60,11 @@ export default function Appbar() {
                 marginRight: "20px",
                 backgroundColor: "#D9D9D9",
                 color: "black",
+                "&:hover": {
+                  backgroundColor: "#EE6C4D",
+                  color: "white",
+                  boxShadow: "1px 1px 1px 1px #EE6C4D",
+                },
               }}
             >
               Register
@@ -70,8 +76,16 @@ export default function Appbar() {
             style={{ textDecoration: "none", color: "white" }}
           >
             <Button
-              variant="outlined"
-              sx={{ backgroundColor: "#D9D9D9", color: "black" }}
+              variant="contained"
+              sx={{
+                backgroundColor: "#D9D9D9",
+                color: "black",
+                "&:hover": {
+                  backgroundColor: "#EE6C4D",
+                  color: "white",
+                  boxShadow: "1px 1px 1px 1px #EE6C4D",
+                },
+              }}
             >
               Login
             </Button>
