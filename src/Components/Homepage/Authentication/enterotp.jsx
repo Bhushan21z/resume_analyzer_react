@@ -12,7 +12,7 @@ export const OtpEnter = (props) => {
 
   const OtpVer = (e) => {
     e.preventDefault();
-    if(form.current.otp.value==="1234"){
+    if(form.current.otp.value===location.state.data.otp){
         const newstate = {
         name: location.state.data.name,
         user_name: "username_dummy",
