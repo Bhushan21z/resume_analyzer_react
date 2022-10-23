@@ -1,11 +1,11 @@
 import Footer from "../Components/Footer";
-import Signin from "../Components/Homepage/Authentication/Signin";
+import {LoginPage} from "../Components/Homepage/Authentication/Login_Page";
 import Appbar from "../Components/Appbar";
 function Login() {
   return (
     <div className="Login">
       <Appbar />
-      <Signin />
+      <LoginPage />
       <Footer />
     </div>
   );
