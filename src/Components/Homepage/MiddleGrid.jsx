@@ -11,6 +11,9 @@ import banner1 from "../../Assets/banner-img.png";
 import banner2 from "../../Assets/banner2.png";
 import DriveFolderUploadIcon from "@mui/icons-material/DriveFolderUpload";
 import CreateNewFolderIcon from "@mui/icons-material/CreateNewFolder";
+import { useNavigate } from "react-router";
+
+
 const Item2 = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   margin: theme.spacing(2),
@@ -57,7 +60,25 @@ const Item3 = styled(Paper)(({ theme }) => ({
   boxShadow: "none",
 }));
 
-export default function MiddleGrid() {
+export default function MiddleGrid(props) {
+
+  const hiddenFileInput = React.useRef(null);
+  const navigate = useNavigate();
+
+
+  const handleClick = event => {
+    hiddenFileInput.current.click();
+  };
+  const handleChange = event => {
+    console.log("Triggered");
+    const fileUploaded = event.target.files[0];
+    //props.handleFile(fileUploaded);
+    console.log(fileUploaded);
+    navigate("/report");
+  };
+
+
+
   return (
     <div style={{ backgroundColor: "#00ABF3" }}>
       <Container
@@ -102,11 +123,11 @@ export default function MiddleGrid() {
 
           <Grid item xs={1.5}>
             <Item2>
-              <Link
+              {/* <Link
                 to="/report"
                 style={{ textDecoration: "none", color: "white" }}
-              >
-                <Button
+              > */}
+                <Button onClick={handleClick}
                   sx={{
                     width: "190px",
                     height: "60px",
@@ -116,7 +137,6 @@ export default function MiddleGrid() {
                     padding: "10px",
                   }}
                 >
-                  {/* <input type="file" /> */}
                   <Typography
                     sx={{
                       fontSize: "20px",
@@ -132,7 +152,10 @@ export default function MiddleGrid() {
                     Upload
                   </Typography>
                 </Button>
-              </Link>
+              {/* </Link> */}
+
+              <input type="file" ref={hiddenFileInput} onChange={handleChange} style={{display: 'none'}} />
+              
               <Link
                 to="/makenew"
                 style={{ textDecoration: "none", color: "white" }}

@@ -27,6 +27,14 @@ const data = [
     title: "Template 4",
     image: Template4,
   },
+  {
+    title: "Template 5",
+    image: Template4,
+  },
+  {
+    title: "Template 6",
+    image: Template4,
+  },
 ];
 
 const Template = () => {
