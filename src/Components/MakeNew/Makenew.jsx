@@ -6,8 +6,8 @@ import {
   Stepper,
   Step,
   StepLabel,
-} from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+} from "@mui/material";
+// import makeStyles from "@mui/styles/makeStyles";
 import {
   useForm,
   Controller,
@@ -15,21 +15,21 @@ import {
   useFormContext,
 } from "react-hook-form";
 
-const useStyles = makeStyles((theme) => ({
-  button: {
-    marginRight: theme.spacing(1),
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   button: {
+//     marginRight: theme.spacing(1),
+//   },
+// }));
 
 function getSteps() {
   return [
-    "Basic information",
-    "Contact Information",
     "Personal Information",
-    "Payment",
+    "Education Information",
+    "Work Experience",
+    "Achievements",
   ];
 }
-const BasicForm = () => {
+const PersonalFrom = () => {
   const { control } = useFormContext();
   return (
     <>
@@ -67,35 +67,13 @@ const BasicForm = () => {
 
       <Controller
         control={control}
-        name="nickName"
-        render={({ field }) => (
-          <TextField
-            id="nick-name"
-            label="Nick Name"
-            variant="outlined"
-            placeholder="Enter Your Nick Name"
-            fullWidth
-            margin="normal"
-            {...field}
-          />
-        )}
-      />
-    </>
-  );
-};
-const ContactForm = () => {
-  const { control } = useFormContext();
-  return (
-    <>
-      <Controller
-        control={control}
-        name="emailAddress"
+        name="Email"
         render={({ field }) => (
           <TextField
             id="email"
-            label="E-mail"
+            label="EmailId"
             variant="outlined"
-            placeholder="Enter Your E-mail Address"
+            placeholder="Enter Your Email"
             fullWidth
             margin="normal"
             {...field}
@@ -105,28 +83,29 @@ const ContactForm = () => {
 
       <Controller
         control={control}
-        name="phoneNumber"
+        name="Address"
         render={({ field }) => (
           <TextField
-            id="phone-number"
-            label="Phone Number"
+            id="address"
+            label="Address"
             variant="outlined"
-            placeholder="Enter Your Phone Number"
+            placeholder="Enter Your Adress"
             fullWidth
             margin="normal"
             {...field}
           />
         )}
       />
+
       <Controller
         control={control}
-        name="alternatePhone"
+        name="Phone"
         render={({ field }) => (
           <TextField
-            id="alternate-phone"
-            label="Alternate Phone"
+            id="phone"
+            label="PhoneNumber"
             variant="outlined"
-            placeholder="Enter Your Alternate Phone"
+            placeholder="Enter Your Mobile Number"
             fullWidth
             margin="normal"
             {...field}
@@ -136,19 +115,35 @@ const ContactForm = () => {
     </>
   );
 };
-const PersonalForm = () => {
+const EducationFrom = () => {
   const { control } = useFormContext();
   return (
     <>
       <Controller
         control={control}
-        name="address1"
+        name="College"
         render={({ field }) => (
           <TextField
-            id="address1"
-            label="Address 1"
+            id="college"
+            label="College"
             variant="outlined"
-            placeholder="Enter Your Address 1"
+            placeholder="Enter Your College Name"
+            fullWidth
+            margin="normal"
+            {...field}
+          />
+        )}
+      />
+
+      <Controller
+        control={control}
+        name="Branch"
+        render={({ field }) => (
+          <TextField
+            id="branch"
+            label="Branch"
+            variant="outlined"
+            placeholder="Enter Your Branch"
             fullWidth
             margin="normal"
             {...field}
@@ -157,13 +152,13 @@ const PersonalForm = () => {
       />
       <Controller
         control={control}
-        name="address2"
+        name="Linkedin"
         render={({ field }) => (
           <TextField
-            id="address2"
-            label="Address 2"
+            id="linkedin"
+            label="Linkedin"
             variant="outlined"
-            placeholder="Enter Your Address 2"
+            placeholder="Enter Your LinkedIn Id"
             fullWidth
             margin="normal"
             {...field}
@@ -172,13 +167,81 @@ const PersonalForm = () => {
       />
       <Controller
         control={control}
-        name="country"
+        name="Github"
         render={({ field }) => (
           <TextField
-            id="country"
-            label="Country"
+            id="github"
+            label="Github"
             variant="outlined"
-            placeholder="Enter Your Country Name"
+            placeholder="Enter Your Github Id"
+            fullWidth
+            margin="normal"
+            {...field}
+          />
+        )}
+      />
+      
+    </>
+  );
+};
+const WorkFrom = () => {
+  const { control } = useFormContext();
+  return (
+    <>
+      <Controller
+        control={control}
+        name="Company1"
+        render={({ field }) => (
+          <TextField
+            id="company1"
+            label="Company1"
+            variant="outlined"
+            placeholder="Enter Company Name"
+            fullWidth
+            margin="normal"
+            {...field}
+          />
+        )}
+      />
+      <Controller
+        control={control}
+        name="JobDesc1"
+        render={({ field }) => (
+          <TextField
+            id="jobdesc1"
+            label="JobDesc1"
+            variant="outlined"
+            placeholder="Specify Job Description"
+            fullWidth
+            margin="normal"
+            {...field}
+          />
+        )}
+      />
+      <Controller
+        control={control}
+        name="Company2"
+        render={({ field }) => (
+          <TextField
+            id="company2"
+            label="Company2"
+            variant="outlined"
+            placeholder="Enter Company Name"
+            fullWidth
+            margin="normal"
+            {...field}
+          />
+        )}
+      />
+      <Controller
+        control={control}
+        name="JobDesc2"
+        render={({ field }) => (
+          <TextField
+            id="jobdesc2"
+            label="JobDesc2"
+            variant="outlined"
+            placeholder="Specify Job Description"
             fullWidth
             margin="normal"
             {...field}
@@ -188,19 +251,19 @@ const PersonalForm = () => {
     </>
   );
 };
-const PaymentForm = () => {
+const AchievementFrom = () => {
   const { control } = useFormContext();
   return (
     <>
       <Controller
         control={control}
-        name="cardNumber"
+        name="Achievement1"
         render={({ field }) => (
           <TextField
-            id="cardNumber"
-            label="Card Number"
+            id="achievement1"
+            label="Achievement1"
             variant="outlined"
-            placeholder="Enter Your Card Number"
+            placeholder="Enter Your Achievement"
             fullWidth
             margin="normal"
             {...field}
@@ -209,34 +272,20 @@ const PaymentForm = () => {
       />
       <Controller
         control={control}
-        name="cardMonth"
+        name="Achievemetdesc1"
         render={({ field }) => (
           <TextField
-            id="cardMonth"
-            label="Card Month"
+            id="achievementdesc1"
+            label="Achievemetdesc1"
             variant="outlined"
-            placeholder="Enter Your Card Month"
+            placeholder="Achievement Description"
             fullWidth
             margin="normal"
             {...field}
           />
         )}
       />
-      <Controller
-        control={control}
-        name="cardYear"
-        render={({ field }) => (
-          <TextField
-            id="cardYear"
-            label="Card Year"
-            variant="outlined"
-            placeholder="Enter Your Card Year"
-            fullWidth
-            margin="normal"
-            {...field}
-          />
-        )}
-      />
+      
     </>
   );
 };
@@ -244,35 +293,38 @@ const PaymentForm = () => {
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return <BasicForm />;
+      return <PersonalFrom />;
 
     case 1:
-      return <ContactForm />;
+      return <EducationFrom />;
     case 2:
-      return <PersonalForm />;
+      return <WorkFrom />;
     case 3:
-      return <PaymentForm />;
+      return <AchievementFrom />;
     default:
       return "unknown step";
   }
 }
 
 const Makenew = () => {
-  const classes = useStyles();
+  // const classes = useStyles();
   const methods = useForm({
     defaultValues: {
       firstName: "",
       lastName: "",
-      nickName: "",
-      emailAddress: "",
-      phoneNumber: "",
-      alternatePhone: "",
-      address1: "",
-      address2: "",
-      country: "",
-      cardNumber: "",
-      cardMonth: "",
-      cardYear: "",
+      Email:"",
+      Address:"",
+      Phone:"",
+      College:"",
+      Branch:"",
+      Linkedin:"",
+      Github:"",
+      Company1:"",
+      JobDesc1:"",
+      Company2:"",
+      JobDesc2:"",
+      Achievement1:"",
+      Achievemetdesc1:"",
     },
   });
   const [activeStep, setActiveStep] = useState(0);
@@ -357,7 +409,7 @@ const Makenew = () => {
               {getStepContent(activeStep)}
 
               <Button
-                className={classes.button}
+                // className={classes.button}
                 disabled={activeStep === 0}
                 onClick={handleBack}
               >
@@ -365,7 +417,7 @@ const Makenew = () => {
               </Button>
               {isStepOptional(activeStep) && (
                 <Button
-                  className={classes.button}
+                  // className={classes.button}
                   variant="contained"
                   color="primary"
                   onClick={handleSkip}
@@ -374,7 +426,7 @@ const Makenew = () => {
                 </Button>
               )}
               <Button
-                className={classes.button}
+                // className={classes.button}
                 variant="contained"
                 color="primary"
                 // onClick={handleNext}
