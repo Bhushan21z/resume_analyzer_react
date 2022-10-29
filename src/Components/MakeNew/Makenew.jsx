@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom"
 import {
   Typography,
   TextField,
@@ -84,7 +86,16 @@ function getStepContent(step) {
 }
 
 const Makenew = () => {
+  const navigate = useNavigate();
   // const classes = useStyles();
+
+  const location = useLocation()
+  var tempno=location.hash;
+  var TemplateNo={
+    tempno: tempno.charAt(tempno.length-1)
+  }
+  console.log(TemplateNo);
+
   const methods = useForm({
     defaultValues: {
       firstName: "",
@@ -119,12 +130,13 @@ const Makenew = () => {
   const handleNext = (data) => {
     console.log(data);
     if (activeStep == steps.length - 1) {
-      fetch("https://jsonplaceholder.typicode.com/comments")
-        .then((data) => data.json())
-        .then((res) => {
-          console.log(res);
-          setActiveStep(activeStep + 1);
-        });
+      // fetch("https://jsonplaceholder.typicode.com/comments")
+      //   .then((data) => data.json())
+      //   .then((res) => {
+      //     console.log(res);
+      //     setActiveStep(activeStep + 1);
+      //   });
+        navigate("/display",{ state: TemplateNo });
     } else {
       setActiveStep(activeStep + 1);
       setSkippedSteps(
