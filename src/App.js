@@ -10,7 +10,10 @@ import ResumeBuilder from "./Pages/ResumeBuilder";
 import Report from "./Pages/Report";
 import Display from "./Pages/Display";
 
+
 const App = () => {
+
+
   return (
     <div>
       <Routes>
