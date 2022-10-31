@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
-import { useNavigate } from "react-router";
+// import emailjs from "@emailjs/browser";
+// import { useNavigate } from "react-router";
 import { Grid, Paper, TextField, Button, Typography } from "@mui/material";
 
 const buttons = { margin: "8px 0", backgroundColor: "#00ABF3" };
@@ -15,14 +15,14 @@ const paperStyle = {
 
 export const LoginPage = () => {
   const form = useRef();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const LoginUser = (e) => {
     e.preventDefault();
     var formjson = {
-        email: form.current.email.value,
-        password: form.current.password.value,
-    }
+      email: form.current.email.value,
+      password: form.current.password.value,
+    };
     console.log(formjson);
   };
 
@@ -42,7 +42,6 @@ export const LoginPage = () => {
           </Typography>
         </Grid>
         <form ref={form} onSubmit={LoginUser}>
-          
           <TextField
             style={text}
             name="email"

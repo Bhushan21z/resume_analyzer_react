@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Grid, Button, TextField } from "@mui/material";
+import { Grid, Button, Divider } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -8,11 +8,7 @@ import Typography from "@mui/material/Typography";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import pic from "../../Assets/mike.jpg";
-import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import { Link } from "react-router-dom";
 const Item = {
   backgroundColor: "white",
   color: "black",
@@ -22,14 +18,52 @@ const Item = {
   my: 3,
   mx: 1,
   padding: 2,
+  justifyContent: "center",
 };
 
-const Dashboard = () => {
-  const [gender, setGender] = React.useState("");
+const info = [
+  {
+    Name: "Lorem Ipsum",
+  },
+  {
+    Position: "Backend Developer",
+  },
+  {
+    Birthday: "01/01/1990",
+  },
+  {
+    Gender: "Male",
+  },
+  {
+    Email: "http://www.github.com/loremipsum",
+  },
+  {
+    Phone: "123456789",
+  },
+  {
+    Linkedin: "https://www.linkedin.com/in/loremipsum/",
+  },
+  {
+    Github: "http://www.github.com/loremipsum",
+  },
+  {
+    Address: "Lorem Ipsum",
+  },
+  {
+    City: "Lorem Ipsum",
+  },
+  {
+    State: "Lorem Ipsum",
+  },
+  {
+    Zip: "Lorem Ipsum",
+  },
+  {
+    Country: "Lorem Ipsum",
+  },
+];
 
-  const handleChange = (event) => {
-    setGender(event.target.value);
-  };
+const EditInfo = () => {
   return (
     <div>
       <Grid
@@ -40,7 +74,7 @@ const Dashboard = () => {
       >
         <Grid item xs={3} md={3} lg={3} sx={Item} textAlign="center">
           <Card sx={{ maxWidth: 500, width: "auto", boxShadow: "0" }}>
-            <CardMedia component="img" height="300" image={pic} />
+            <CardMedia component="img" height="500" image={pic} />
             <CardContent>
               <Typography gutterBottom variant="h4" component="div">
                 Lorem Ipsum
@@ -56,6 +90,7 @@ const Dashboard = () => {
                 Backend Developer
               </Typography>
             </CardContent>
+            <Divider />
             <CardActions>
               <Grid container justifyContent="center">
                 <Button size="large">
@@ -66,8 +101,36 @@ const Dashboard = () => {
                 </Button>
               </Grid>
             </CardActions>
+
+            <Divider />
+            <Grid item justifyContent="center">
+              <Link to="/editprofile" style={{ textDecoration: "none" }}>
+                <Button
+                  sx={{
+                    fontSize: "20px",
+                    my: 3,
+                    width: "200px",
+                    height: "50px",
+                    borderRadius: "10px",
+                    background: "#d3d3d3",
+                    color: "black",
+                    boxShadow: "0",
+                    position: "relative",
+
+                    "&:hover": {
+                      background: "#d3d3d3",
+                      color: "black",
+                    },
+                  }}
+                  variant="contained"
+                >
+                  Edit Info
+                </Button>
+              </Link>
+            </Grid>
           </Card>
         </Grid>
+
         <Grid item xs={8} md={8} lg={8} sx={Item}>
           <Typography
             sx={{
@@ -77,80 +140,45 @@ const Dashboard = () => {
           >
             Personal Information
           </Typography>
+          <Divider />
+          <Grid
+            container
+            justifyContent="center"
+            sx={{
+              my: 3,
+              p: 3,
+              borderRadius: "10px",
+            }}
+          >
+            {info.map((data) => {
+              return (
+                <Grid container spacing={2}>
+                  <Grid item xs={3} sx={{ ml: 3, my: 1 }}>
+                    <Typography
+                      sx={{
+                        fontSize: "25px",
+                        ml: 6,
+                        fontWeight: "bold",
+                        color: "black",
+                      }}
+                    >
+                      {Object.keys(data)} :
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Typography
+                      sx={{
+                        fontSize: "25px",
 
-          <Grid container spacing={2}>
-            <Grid item xs={10} sm={5}>
-              <TextField
-                autoComplete="given-name"
-                name="firstName"
-                required
-                fullWidth
-                id="firstName"
-                label="First Name"
-                autoFocus
-              />
-            </Grid>
-            <Grid item xs={10} sm={5}>
-              <TextField
-                required
-                fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-                autoComplete="family-name"
-              />
-            </Grid>
-            <Grid item xs={10} sm={5}>
-              <InputLabel id="birthday">Birthday</InputLabel>
-              <TextField
-                name="birthday"
-                type="date"
-                required
-                fullWidth
-                labelId="birthday"
-                autoFocus
-              />
-            </Grid>
-            <Grid item xs={10} sm={5}>
-              <InputLabel id="demo-simple-select-label">Gender</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                required
-                fullWidth
-                value={gender}
-                label="Gender"
-                onChange={handleChange}
-              >
-                <MenuItem value={10}>Male</MenuItem>
-                <MenuItem value={20}>Female</MenuItem>
-                <MenuItem value={30}>others</MenuItem>
-              </Select>
-            </Grid>
-            <Grid item xs={10} sm={5}>
-              <TextField
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-              />
-            </Grid>
-            <Grid item xs={10} sm={5}>
-              <TextField
-                type="tel"
-                required
-                fullWidth
-                id="phone"
-                label="Phone Number"
-                name="phone"
-              />
-            </Grid>
-
-            <Grid item xs={12}>
-              <Button variant="contained">Edit Info</Button>
-            </Grid>
+                        color: "black",
+                      }}
+                    >
+                      {Object.values(data)}
+                    </Typography>
+                  </Grid>
+                </Grid>
+              );
+            })}
           </Grid>
         </Grid>
 
@@ -160,4 +188,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default EditInfo;

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
-import { useNavigate } from "react-router";
+// import emailjs from "@emailjs/browser";
+// import { useNavigate } from "react-router";
 import { useLocation } from "react-router-dom";
 import { Grid, Paper, TextField, Button } from "@mui/material";
 const buttons = { margin: "8px 0", backgroundColor: "#00ABF3" };
@@ -9,7 +9,7 @@ const paperStyle = { padding: 20, width: 600, margin: "0 auto" };
 
 export const OtpEnter = (props) => {
   const form = useRef();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const location = useLocation();
   console.log(location.state.data);
 
