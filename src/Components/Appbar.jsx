@@ -90,6 +90,25 @@ export default function Appbar() {
               Login
             </Button>
           </Link>
+          <Link
+            to={`/dashboard`}
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#D9D9D9",
+                color: "black",
+                "&:hover": {
+                  backgroundColor: "#EE6C4D",
+                  color: "white",
+                  boxShadow: "1px 1px 1px 1px #EE6C4D",
+                },
+              }}
+            >
+              Profile
+            </Button>
+          </Link>
         </Toolbar>
       </AppBar>
     </Box>

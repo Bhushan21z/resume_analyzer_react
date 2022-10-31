@@ -2,10 +2,6 @@ import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router";
 import { Grid, Paper, TextField, Button, Typography } from "@mui/material";
-import { useEffect  } from "react";
-import Authentication from './authentication';
-import Auth from './auth2';
-import {GoogleOAuthProvider} from '@react-oauth/google';
 
 const buttons = { margin: "8px 0", backgroundColor: "#00ABF3" };
 const text = { padding: 2, margin: "8px 0" };
@@ -18,7 +14,6 @@ const paperStyle = {
 };
 
 export const Register = () => {
-
   const form = useRef();
   const navigate = useNavigate();
 
