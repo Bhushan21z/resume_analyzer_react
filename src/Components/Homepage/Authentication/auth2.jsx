@@ -30,7 +30,8 @@ function Auth() {
                     <i class="fa-brands fa-google"></i>
                     Continue with google
                 </button>
-                <GoogleLogin
+                {/* <GoogleLogin
+                    onClick={login}
                     onSuccess={credentialResponse => {
                     console.log(credentialResponse.credential);
                     var decoded = jwt_decode(credentialResponse.credential);
@@ -38,7 +39,7 @@ function Auth() {
                 }}
                     onError={() => {
                     console.log('Login Failed');
-                }}/>
+                }}/> */}
             </div>
     );
 }

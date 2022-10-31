@@ -110,7 +110,7 @@ export const Register = () => {
         {/* <Authentication /> */}
         <GoogleOAuthProvider clientId="22391200397-ilcuagqhcvspoafiqotvn7up9jlg27k4.apps.googleusercontent.com">
             <Auth/>
-        </GoogleOAuthProvider>;
+        </GoogleOAuthProvider>
       </Paper>
     </Grid>
 
