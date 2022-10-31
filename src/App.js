@@ -8,12 +8,9 @@ import Otp from "./Pages/Otp";
 import Templates from "./Pages/Templates";
 import ResumeBuilder from "./Pages/ResumeBuilder";
 import Report from "./Pages/Report";
-import Display from "./Pages/Display";
-
+import Profile from "./Pages/Profile";
 
 const App = () => {
-
-
   return (
     <div>
       <Routes>
@@ -25,7 +22,7 @@ const App = () => {
         <Route path="makenew" element={<Templates />} />
         <Route path="resume" element={<ResumeBuilder />} />
         <Route path="report" element={<Report />} />
-        <Route path="display" element={<Display />} />
+        <Route path="dashboard" element={<Profile />} />
       </Routes>
     </div>
   );
