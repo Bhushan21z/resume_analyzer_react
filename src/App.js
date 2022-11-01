@@ -9,6 +9,7 @@ import ResumeBuilder from "./Pages/ResumeBuilder";
 import Report from "./Pages/Report";
 import Profile from "./Pages/Profile";
 import EditProfile from "./Pages/Editprofile";
+import Display from "./Pages/Display";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="report" element={<Report />} />
         <Route path="profile" element={<Profile />} />
         <Route path="editprofile" element={<EditProfile />} />
+        <Route path="display" element={<Display />} />
       </Routes>
     </div>
   );

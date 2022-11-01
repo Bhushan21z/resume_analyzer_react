@@ -68,10 +68,10 @@ const EditInfo = () => {
         {/* ----------------------------left Bar--------------------------------------------------------------- */}
         <Grid item xs={3} md={3} lg={3} sx={Item} textAlign="center">
           <Card sx={{ maxWidth: 500, width: "auto", boxShadow: "0" }}>
-            <CardMedia component="img" height="500" image={pic} />
+            <CardMedia component="img" height="300" image={pic} />
             <CardContent>
               <Typography gutterBottom variant="h4" component="div">
-                Lorem Ipsum
+                {personal[0].Name}
               </Typography>
               <Typography
                 gutterBottom

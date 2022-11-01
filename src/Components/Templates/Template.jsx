@@ -37,7 +37,11 @@ const data = [
   },
 ];
 
+
 const Template = () => {
+  const ResumeNo={
+    TemplateNo:2
+  }
   return (
     <div
       style={{
@@ -76,7 +80,7 @@ const Template = () => {
       >
         {/* <Grid item> */}
         {data.map((item) => (
-          <Link to="/resume" style={{ textDecoration: "None" }}>
+          <Link to={{pathname:"/resume", hash:item.title}} style={{ textDecoration: "None" }}>
             <Card
               sx={{
                 width: "auto",
