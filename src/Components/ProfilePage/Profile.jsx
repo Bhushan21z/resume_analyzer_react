@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Grid, Button, Divider } from "@mui/material";
+import { Grid, Button, Divider, Paper, CardHeader } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -9,6 +9,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import pic from "../../Assets/mike.jpg";
 import { Link } from "react-router-dom";
+
 const Item = {
   backgroundColor: "white",
   color: "black",
@@ -17,51 +18,43 @@ const Item = {
   borderRadius: "10px",
   my: 3,
   mx: 1,
-  padding: 2,
+  padding: 1,
   justifyContent: "center",
 };
 
-const info = [
-  {
-    Name: "Lorem Ipsum",
-  },
-  {
-    Position: "Backend Developer",
-  },
-  {
-    Birthday: "01/01/1990",
-  },
-  {
-    Gender: "Male",
-  },
-  {
-    Email: "http://www.github.com/loremipsum",
-  },
-  {
-    Phone: "123456789",
-  },
-  {
-    Linkedin: "https://www.linkedin.com/in/loremipsum/",
-  },
-  {
-    Github: "http://www.github.com/loremipsum",
-  },
-  {
-    Address: "Lorem Ipsum",
-  },
-  {
-    City: "Lorem Ipsum",
-  },
-  {
-    State: "Lorem Ipsum",
-  },
-  {
-    Zip: "Lorem Ipsum",
-  },
-  {
-    Country: "Lorem Ipsum",
-  },
+const header = {
+  fontSize: "20px",
+  textAlign: "center",
+  background: "#293241",
+  color: "white",
+  fontFamily: "sans-serif",
+  borderRadius: "5px",
+};
+
+const personal = [
+  { Name: "Mike" },
+  { Gender: "male" },
+  { Age: "25" },
+  { BirthDay: "10/10/1990" },
 ];
+
+const contact = [
+  { Email: "mike@gmail.com" },
+  { Phone: "123456789" },
+  { LinkedIn: "mike.linkedin.com" },
+  { GitHub: "mike.github.com" },
+];
+
+const Projects = [{ Project: "Project1" }, { Project2: "Project2" }];
+
+const address = [
+  { Street: "1234 Main St" },
+  { City: "New York" },
+  { State: "NY" },
+  { Zip: "12345" },
+];
+
+const skills = ["Python", "Java", "C++", "C#", "JavaScript", "React", "Node"];
 
 const EditInfo = () => {
   return (
@@ -72,6 +65,7 @@ const EditInfo = () => {
         xs={12}
         sx={{ background: "#d3d3d3" }}
       >
+        {/* ----------------------------left Bar--------------------------------------------------------------- */}
         <Grid item xs={3} md={3} lg={3} sx={Item} textAlign="center">
           <Card sx={{ maxWidth: 500, width: "auto", boxShadow: "0" }}>
             <CardMedia component="img" height="500" image={pic} />
@@ -112,8 +106,8 @@ const EditInfo = () => {
                     width: "200px",
                     height: "50px",
                     borderRadius: "10px",
-                    background: "#d3d3d3",
-                    color: "black",
+                    backgroundColor: "#023047",
+                    color: "white",
                     boxShadow: "0",
                     position: "relative",
 
@@ -131,59 +125,129 @@ const EditInfo = () => {
           </Card>
         </Grid>
 
+        {/* -----------------------------------------RIght Bar--------------------------------------------------------- */}
+
         <Grid item xs={8} md={8} lg={8} sx={Item}>
-          <Typography
-            sx={{
-              fontSize: "40px",
-              m: 3,
-            }}
-          >
+          <Typography sx={{ fontSize: "40px", m: 3, textAlign: "center" }}>
             Personal Information
           </Typography>
           <Divider />
+
           <Grid
             container
             justifyContent="center"
-            sx={{
-              my: 3,
-              p: 3,
-              borderRadius: "10px",
-            }}
+            sx={{ my: 3, p: 1, borderRadius: "10px" }}
           >
-            {info.map((data) => {
-              return (
-                <Grid container spacing={2}>
-                  <Grid item xs={3} sx={{ ml: 3, my: 1 }}>
-                    <Typography
-                      sx={{
-                        fontSize: "25px",
-                        ml: 6,
-                        fontWeight: "bold",
-                        color: "black",
-                      }}
-                    >
-                      {Object.keys(data)} :
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={6}>
-                    <Typography
-                      sx={{
-                        fontSize: "25px",
+            {/* ----------------------------------Personal Information-------------------------------- */}
+            <Grid item xs={11} sm={11} md={10} lg={5} sx={{ m: 0.5 }}>
+              <Card sx={{ width: "auto" }}>
+                <CardHeader title="Personal Details" sx={header} />
+                <CardContent>
+                  {personal.map((data) => {
+                    return (
+                      <Grid container>
+                        <Grid
+                          item
+                          xs={11}
+                          sm={11}
+                          lg={11}
+                          sx={{ ml: 1, my: 1 }}
+                        >
+                          <Typography sx={{ fontSize: "20px", color: "black" }}>
+                            {Object.keys(data)} : {Object.values(data)}
+                          </Typography>
+                        </Grid>
+                      </Grid>
+                    );
+                  })}
+                </CardContent>
+              </Card>
+            </Grid>
 
-                        color: "black",
-                      }}
-                    >
-                      {Object.values(data)}
-                    </Typography>
-                  </Grid>
-                </Grid>
-              );
-            })}
+            {/* ----------------------------------Contact Information-------------------------------- */}
+
+            <Grid item xs={11} sm={11} md={10} lg={6} sx={{ m: 0.5 }}>
+              <Card sx={{ width: "auto" }}>
+                <CardHeader title="Contact  " sx={header} />
+
+                <CardContent>
+                  {contact.map((data) => {
+                    return (
+                      <Grid container>
+                        <Grid
+                          item
+                          xs={11}
+                          sm={11}
+                          lg={11}
+                          sx={{ ml: 1, my: 1 }}
+                        >
+                          <Typography sx={{ fontSize: "20px", color: "black" }}>
+                            {Object.keys(data)} : {Object.values(data)}
+                          </Typography>
+                        </Grid>
+                      </Grid>
+                    );
+                  })}
+                </CardContent>
+              </Card>
+            </Grid>
+
+            {/* ----------------------------------Projects-------------------------------- */}
+
+            <Grid item xs={10} sm={10} md={10} lg={11} sx={{ m: 1 }}>
+              <Card sx={{ width: "auto" }}>
+                <CardHeader title="Projects" sx={header} />
+
+                <CardContent>
+                  {Projects.map((data) => {
+                    return (
+                      <Grid container>
+                        <Grid item xs={4} sm={3} lg={3} sx={{ ml: 1, my: 1 }}>
+                          <Typography sx={{ fontSize: "20px", color: "black" }}>
+                            {Object.keys(data)} : {Object.values(data)}
+                          </Typography>
+
+                          <Typography sx={{ fontSize: "20px", color: "black" }}>
+                            Description :
+                          </Typography>
+
+                          <Typography sx={{ fontSize: "20px", color: "black" }}>
+                            Link :
+                          </Typography>
+                        </Grid>
+                      </Grid>
+                    );
+                  })}
+                </CardContent>
+              </Card>
+            </Grid>
+
+            {/* ----------------------------------Address-------------------------------- */}
+
+            <Grid item xs={10} sm={10} md={10} lg={11} sx={{ m: 1 }}>
+              <Card sx={{ width: "auto" }}>
+                <CardHeader title="Address" sx={header} />
+
+                <CardContent>
+                  {address.map((data) => {
+                    return (
+                      <Grid container>
+                        <Grid item sx={{ ml: 1, my: 1 }}>
+                          <Typography sx={{ fontSize: "20px", color: "black" }}>
+                            {Object.keys(data)} : {Object.values(data)}
+                          </Typography>
+                        </Grid>
+                      </Grid>
+                    );
+                  })}
+                </CardContent>
+              </Card>
+            </Grid>
           </Grid>
         </Grid>
-
-        {/* Right Bar */}
       </Grid>
+
+      {/* Right Bar */}
     </div>
   );
 };

@@ -5,8 +5,21 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import AdbIcon from "@mui/icons-material/Adb";
-import { Grid } from "@mui/material";
+import { ButtonGroup, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
+
+const btn = {
+  marginRight: "20px",
+  backgroundColor: "#D9D9D9",
+  color: "black",
+  "&:hover": {
+    backgroundColor: "#EE6C4D",
+    color: "white",
+    boxShadow: "1px 1px 1px 1px #EE6C4D",
+  },
+};
+
+const buttons = ["Login", "Register", "Profile"];
 
 export default function Appbar() {
   return (
@@ -16,21 +29,20 @@ export default function Appbar() {
         sx={{
           backgroundColor: "black",
           height: "10vh",
+          boxShadow: "none",
+          paddingTop: "15px",
+          px: 3,
         }}
       >
-        <Toolbar
-          sx={{
-            paddingTop: "30px",
-          }}
-        >
+        <Toolbar>
           <Grid container spacing={2}>
             <Link to="/" style={{ textDecoration: "none", color: "white" }}>
               <Grid container xs={12}>
                 <Grid item xs={4}>
                   <AdbIcon
                     sx={{
-                      display: { xs: "none", md: "flex" },
                       mr: 1,
+                      fontSize: "40px",
                     }}
                   />
                 </Grid>
@@ -50,65 +62,18 @@ export default function Appbar() {
             </Link>
           </Grid>
 
-          <Link
-            to={`/signup`}
-            style={{ textDecoration: "none", color: "white" }}
-          >
-            <Button
-              variant="contained"
-              sx={{
-                marginRight: "20px",
-                backgroundColor: "#D9D9D9",
-                color: "black",
-                "&:hover": {
-                  backgroundColor: "#EE6C4D",
-                  color: "white",
-                  boxShadow: "1px 1px 1px 1px #EE6C4D",
-                },
-              }}
-            >
-              Register
-            </Button>{" "}
-          </Link>
-
-          <Link
-            to={`/login`}
-            style={{ textDecoration: "none", color: "white" }}
-          >
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "#D9D9D9",
-                color: "black",
-                "&:hover": {
-                  backgroundColor: "#EE6C4D",
-                  color: "white",
-                  boxShadow: "1px 1px 1px 1px #EE6C4D",
-                },
-              }}
-            >
-              Login
-            </Button>
-          </Link>
-          <Link
-            to={`/dashboard`}
-            style={{ textDecoration: "none", color: "white" }}
-          >
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "#D9D9D9",
-                color: "black",
-                "&:hover": {
-                  backgroundColor: "#EE6C4D",
-                  color: "white",
-                  boxShadow: "1px 1px 1px 1px #EE6C4D",
-                },
-              }}
-            >
-              Profile
-            </Button>
-          </Link>
+          <ButtonGroup variant="text" aria-label="text button group">
+            {buttons.map((button) => (
+              <Link
+                to={`/${button.toLowerCase()}`}
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <Button variant="contained" sx={btn}>
+                  {button}
+                </Button>
+              </Link>
+            ))}
+          </ButtonGroup>
         </Toolbar>
       </AppBar>
     </Box>

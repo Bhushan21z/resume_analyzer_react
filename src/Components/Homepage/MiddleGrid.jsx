@@ -13,7 +13,6 @@ import DriveFolderUploadIcon from "@mui/icons-material/DriveFolderUpload";
 import CreateNewFolderIcon from "@mui/icons-material/CreateNewFolder";
 import { useNavigate } from "react-router";
 
-
 const Item2 = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   margin: theme.spacing(2),
@@ -60,24 +59,30 @@ const Item3 = styled(Paper)(({ theme }) => ({
   boxShadow: "none",
 }));
 
-export default function MiddleGrid(props) {
+const btn = {
+  width: "190px",
+  height: "60px",
+  backgroundColor: "#EE6C4D",
+  borderRadius: "5px",
+  padding: "10px",
+  m: 1,
+  color: "white",
+};
 
+export default function MiddleGrid(props) {
   const hiddenFileInput = React.useRef(null);
   const navigate = useNavigate();
 
-
-  const handleClick = event => {
+  const handleClick = (event) => {
     hiddenFileInput.current.click();
   };
-  const handleChange = event => {
+  const handleChange = (event) => {
     console.log("Triggered");
     const fileUploaded = event.target.files[0];
     //props.handleFile(fileUploaded);
     console.log(fileUploaded);
     navigate("/report");
   };
-
-
 
   return (
     <div style={{ backgroundColor: "#00ABF3" }}>
@@ -123,63 +128,40 @@ export default function MiddleGrid(props) {
 
           <Grid item xs={1.5}>
             <Item2>
-              {/* <Link
-                to="/report"
-                style={{ textDecoration: "none", color: "white" }}
-              > */}
-                <Button onClick={handleClick}
-                  sx={{
-                    width: "190px",
-                    height: "60px",
-                    marginBottom: "20px",
-                    backgroundColor: "#EE6C4D",
-                    borderRadius: "10px",
-                    padding: "10px",
-                  }}
-                >
-                  <Typography
+              <Button onClick={handleClick} sx={btn}>
+                <Typography sx={{ fontSize: "20px", color: "white" }}>
+                  <DriveFolderUploadIcon
                     sx={{
-                      fontSize: "20px",
-                      color: "white",
+                      fontSize: "30px",
+                      mr: "10px",
+                      position: "relative",
+                      top: "5px",
                     }}
-                  >
-                    <DriveFolderUploadIcon
-                      sx={{
-                        fontSize: "45px",
-                        marginRight: "10px",
-                      }}
-                    />
-                    Upload
-                  </Typography>
-                </Button>
+                  />
+                  Upload
+                </Typography>
+              </Button>
               {/* </Link> */}
 
-              <input type="file" ref={hiddenFileInput} onChange={handleChange} style={{display: 'none'}} />
-              
+              <input
+                type="file"
+                ref={hiddenFileInput}
+                onChange={handleChange}
+                style={{ display: "none" }}
+              />
+
               <Link
                 to="/makenew"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                <Button
-                  sx={{
-                    width: "190px",
-                    height: "60px",
-                    marginBottom: "20px",
-                    backgroundColor: "#EE6C4D",
-                    borderRadius: "10px",
-                    padding: "10px",
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontSize: "20px",
-                      color: "white",
-                    }}
-                  >
+                <Button sx={btn}>
+                  <Typography sx={{ fontSize: "20px", color: "white" }}>
                     <CreateNewFolderIcon
                       sx={{
-                        fontSize: "45px",
-                        marginRight: "10px",
+                        fontSize: "30px",
+                        mr: "10px",
+                        position: "relative",
+                        top: "5px",
                       }}
                     />
                     Make New

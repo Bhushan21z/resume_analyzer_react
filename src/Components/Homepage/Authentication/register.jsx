@@ -5,14 +5,29 @@ import { Grid, Paper, TextField, Button, Typography } from "@mui/material";
 import Auth from "./auth2";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
-const buttons = { margin: "8px 0", backgroundColor: "#00ABF3" };
+const buttons = {
+  margin: "8px 0",
+  backgroundColor: "#00ABF3",
+  color: "white",
+  height: "50px",
+  borderRadius: "5px",
+  fontSize: "20px",
+  position: "relative",
+  left: "50%",
+  transform: "translateX(-50%)",
+  fontWeight: "bold",
+  textTransform: "none",
+  "&:hover": {
+    backgroundColor: "#00ABF3",
+    color: "white",
+  },
+};
 const text = { padding: 2, margin: "8px 0" };
 const paperStyle = {
   padding: 20,
   width: 600,
   margin: "0 auto",
   height: "500px",
-  // boxShadow: "1px 0px 0px 0px black",
 };
 
 export const Register = () => {
@@ -52,7 +67,12 @@ export const Register = () => {
         }
       );
   };
-  const headerStyle = { margin: 0 };
+  const headerStyle = {
+    margin: 0,
+    textAlign: "center",
+    fontSize: "40px",
+    fontWeight: "bold",
+  };
   return (
     <Grid
       sx={{
@@ -110,16 +130,5 @@ export const Register = () => {
         </GoogleOAuthProvider>
       </Paper>
     </Grid>
-
-    // <form ref={form} onSubmit={SendEmail}>
-    //   <label>Name</label>
-    //   <input type="text" name="to_name" />
-    //   <label>Email</label>
-    //   <input type="email" name="to_email" />
-    //   <label>Password</label>
-    //   <input type="text" name="password" />
-    //   <input type="hidden" name="otp" />
-    //   <input type="submit" value="Send" />
-    // </form>
   );
 };
