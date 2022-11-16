@@ -10,6 +10,8 @@ import Report from "./Pages/Report";
 import Profile from "./Pages/Profile";
 import EditProfile from "./Pages/Editprofile";
 import Display from "./Pages/Display";
+import Form from "./Pages/form";
+
 
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
         <Route path="profile" element={<Profile />} />
         <Route path="editprofile" element={<EditProfile />} />
         <Route path="display" element={<Display />} />
+
+        <Route path="imgform" element={<Form />} />
       </Routes>
     </div>
   );

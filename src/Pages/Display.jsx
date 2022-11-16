@@ -1,5 +1,5 @@
 import React from "react";
-import DisplayResume from "../Components/Display/display";
+import DisplayResume from "../Components/Display/displayPdf";
 import Appbar from "../Components/Appbar";
 import Footer from "../Components/Footer";
 const Display = () => {
